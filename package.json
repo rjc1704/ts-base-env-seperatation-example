@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development tsx watch src/app.ts",
+    "dev": "dotenv -e .env.development tsx watch src/app.ts",
     "build": "tsc",
-    "start": "NODE_ENV=production node --enable-source-maps dist/app.js",
-    "studio": "NODE_ENV=development npx prisma studio",
-    "studio:prod": "NODE_ENV=production npx prisma studio",
-    "migrate": "NODE_ENV=development npx prisma migrate dev",
-    "migrate:prod": "NODE_ENV=production npx prisma migrate deploy"
+    "start": "dotenv -e .env.production -- node --enable-source-maps dist/app.js",
+    "studio:dev": "dotenv -e .env.development -- npx prisma studio",
+    "studio:prod": "dotenv -e .env.production -- npx prisma studio",
+    "migrate:dev": "dotenv -e .env.development -- npx prisma migrate dev",
+    "migrate:prod": "dotenv -e .env.production -- npx prisma migrate deploy"
   },
   "keywords": [],
   "author": "",

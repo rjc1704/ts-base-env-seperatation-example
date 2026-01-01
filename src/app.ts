@@ -16,7 +16,7 @@ type PostUpdateInput = Prisma.PostUpdateInput;
 
 const app = express();
 
-console.log("process.env.NODE_ENV::", process.env.NODE_ENV);
+console.log("process.env.DATABASE_URL::", process.env.DATABASE_URL);
 
 app.get("/users/:id", (req: Request<{ id: string }>, res: Response) => {
   const userId = req.params.id;
